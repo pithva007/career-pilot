@@ -146,7 +146,7 @@ export const enhanceResume = async (resumeText, preferences, aiProvider) => {
     const result = await getModel().generateContent(prompt);
     const response = await result.response;
     const text = response.text();
-    const result = await provider.generateContent(prompt);
+    const providerResult = await provider.generateContent(prompt);
 
     return {
       success: true,
@@ -173,7 +173,7 @@ ${resumeText}`;
     const result = await getModel().generateContent(prompt);
     const response = await result.response;
     const text = response.text();
-    const result = await provider.generateContent(prompt);
+    const providerResult = await provider.generateContent(prompt);
 
     return {
       success: true,
@@ -199,7 +199,7 @@ ${resumeText}`;
     const result = await getModel().generateContent(prompt);
     const response = await result.response;
     const text = response.text();
-    const result = await provider.generateContent(prompt);
+    const providerResult = await provider.generateContent(prompt);
 
     return {
       success: true,
@@ -263,7 +263,7 @@ ${resumeText}`;
     const result = await getModel().generateContent(prompt);
     const response = await result.response;
     const text = response.text();
-    const result = await provider.generateContent(prompt);
+    const providerResult = await provider.generateContent(prompt);
 
     // Parse JSON from response
     let analysisData;
@@ -413,7 +413,7 @@ ${resumeText}`;
     const result = await getModel().generateContent(prompt);
     const response = await result.response;
     const text = response.text();
-    const result = await provider.generateContent(prompt);
+    const providerResult = await provider.generateContent(prompt);
 
     let analysisData;
     try {
@@ -486,7 +486,7 @@ ${resumeText}`;
     const result = await getModel().generateContent(prompt);
     const response = await result.response;
     const text = response.text();
-    const result = await provider.generateContent(prompt);
+    const providerResult = await provider.generateContent(prompt);
 
     let bulletData;
     try {
@@ -542,7 +542,7 @@ ${resumeText}`;
     const result = await getModel().generateContent(prompt);
     const response = await result.response;
     const text = response.text();
-    const result = await provider.generateContent(prompt);
+    const providerResult = await provider.generateContent(prompt);
 
     let comparisonData;
     try {
