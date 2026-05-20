@@ -12,7 +12,7 @@ if (!geminiApiKey) {
 
 let _model = null;
 
-const getModel = () => {
+export const getModel = () => {
   if (_model) return _model;
   if (!geminiApiKey) {
     const err = new Error('AI features are unavailable — GEMINI_API_KEY is not configured.');
@@ -48,7 +48,7 @@ function tokensUsedFromResult(result) {
   };
 }
 
-const getSystemPrompt = (jobRole, yearsOfExperience, skills, industry, customInstructions, profileInfo) => {
+export const getSystemPrompt = (jobRole, yearsOfExperience, skills, industry, customInstructions, profileInfo) => {
   const { fullName, email, phone, linkedinUrl, githubUrl, portfolioUrl } = profileInfo || {};
   const safeSkills = Array.isArray(skills) ? skills : (skills ? [String(skills)] : []);
 

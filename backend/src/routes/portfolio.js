@@ -5,6 +5,7 @@ import { asyncHandler, ApiError } from '../middleware/errorHandler.js';
 import cacheHeaders from '../middleware/cacheHeaders.js';
 import { enhanceSection } from '../services/ai/portfolioContentEnhancer.js';
 import { generateRobotsTxt, generateSitemapXml } from '../utils/sitemapGenerator.js';
+import { explainCodebase, generateProjectStory } from '../services/github/codebaseExplainer.js';
 
 const router = express.Router();
 
@@ -74,7 +75,46 @@ router.post('/enhance-portfolio-content', verifyToken, asyncHandler(async (req, 
   });
 }));
 
-router.get('/public/:slug/sitemap.xml', sitemapCache, asyncHandler(async (req, res) => {
+/**
+ * POST /api/portfolio/explain-codebase
+ * Generate human-readable explanation of a codebase
+ */
+router.post('/explain-codebase', verifyToken, asyncHandler(async (req, res) => {
+  const { repoData, verbosity = 'standard' } = req.body;
+
+  if (!repoData || typeof repoData !== 'object') {
+    throw new ApiError(400, 'repoData is required and must be an object.');
+  }
+
+  const result = await explainCodebase(repoData, verbosity);
+
+  return res.status(200).json({
+    success: true,
+    message: 'Codebase explanation generated.',
+    data: result,
+  });
+}));
+
+/**
+ * POST /api/portfolio/project-story
+ * Generate narrative story about a project
+ */
+router.post('/project-story', verifyToken, asyncHandler(async (req, res) => {
+  const { repoData, verbosity = 'standard' } = req.body;
+
+  if (!repoData || typeof repoData !== 'object') {
+    throw new ApiError(400, 'repoData is required and must be an object.');
+  }
+
+  const result = await generateProjectStory(repoData, verbosity);
+
+  return res.status(200).json({
+    success: true,
+    message: 'Project story generated.',
+    data: result,
+  });
+}));
+
 /**
  * POST /api/portfolio/:id/performance
  * Analyze or track portfolio performance metrics
