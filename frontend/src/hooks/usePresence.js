@@ -9,11 +9,22 @@ export function usePresence(userIds = []) {
   const { onlineUsers, subscribe } = useSocket();
   const [presenceMap, setPresenceMap] = useState({});
 
-  // Create a stable primitive key based on array content to prevent unnecessary effect triggers
-  const serializedUserIds = userIds.join(',');
+  // Serialize the array to a stable primitive so effect dependency comparisons
+  // use value equality rather than reference equality. Sorting guarantees that
+  // ['a','b'] and ['b','a'] are treated as the same set of tracked users.
+  const serializedUserIds = useMemo(
+    () => [...userIds].sort().join(','),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [userIds.length, ...userIds]
+  );
 
-  // Memoize the target user IDs array so its reference remains stable between renders
-  const stableUserIds = useMemo(() => userIds, [serializedUserIds]);
+  // Reconstruct a stable array reference from the serialized string so that
+  // inline arrays (e.g. usePresence(['user1','user2'])) do not cause the
+  // subscription effects below to re-run on every parent render.
+  const stableUserIds = useMemo(
+    () => (serializedUserIds ? serializedUserIds.split(',') : []),
+    [serializedUserIds]
+  );
 
   // 1. Synchronize local map when global onlineUsers change or target user IDs change
   useEffect(() => {
