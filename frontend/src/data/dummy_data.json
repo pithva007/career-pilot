@@ -1,0 +1,165 @@
+{
+  "personal": {
+    "name": "Jane Doe",
+    "title": "Senior Full-Stack Engineer & Performance Architect",
+    "bio": "Specializing in building high-throughput web systems, ultra-responsive interfaces, and distributed cloud systems. Shipping clean, scale-ready code with sub-millisecond execution speeds.",
+    "email": "jane.doe@devflix.io",
+    "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300&h=300",
+    "resumeUrl": "https://raw.githubusercontent.com/w3c/aria/master/snapshots/2021/index.html",
+    "about": "Over 7 years of engineering experience across fintech, media streaming, and SaaS platforms. Passionate about performance tuning, React architectures, serverless design, and developer mentorship."
+  },
+  "socials": {
+    "github": "https://github.com",
+    "linkedin": "https://linkedin.com",
+    "twitter": "https://twitter.com",
+    "portfolio": "https://portfolio.devflix.io"
+  },
+  "projects": [
+    {
+      "id": "proj-1",
+      "title": "DevStream: Real-time Video Engine",
+      "description": "High-performance distributed video streaming engine written in Go and WebRTC. Optimized for sub-50ms latency across 10,000+ concurrent subscribers.",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=600&h=340",
+      "techStack": ["React", "Go", "WebRTC", "Redis", "Docker"],
+      "liveUrl": "https://github.com",
+      "githubUrl": "https://github.com",
+      "matchScore": 98,
+      "releaseYear": 2025,
+      "maturityRating": "PG-13",
+      "duration": "6 months"
+    },
+    {
+      "id": "proj-2",
+      "title": "Quantum DB Orchestrator",
+      "description": "Kubernetes operator for automated horizontal scaling, failover routing, and zero-downtime backups of multi-region PostgreSQL clusters.",
+      "image": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=600&h=340",
+      "techStack": ["React", "Kubernetes", "PostgreSQL", "Go", "gRPC"],
+      "liveUrl": "https://github.com",
+      "githubUrl": "https://github.com",
+      "matchScore": 95,
+      "releaseYear": 2024,
+      "maturityRating": "G",
+      "duration": "8 months"
+    },
+    {
+      "id": "proj-3",
+      "title": "HyperUI Design System",
+      "description": "W3C accessible, headless component library styled with Tailwind CSS. Includes sub-microsecond animation configurations via Framer Motion.",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600&h=340",
+      "techStack": ["React", "Tailwind CSS", "Framer Motion", "Storybook"],
+      "liveUrl": "https://github.com",
+      "githubUrl": "https://github.com",
+      "matchScore": 99,
+      "releaseYear": 2025,
+      "maturityRating": "G",
+      "duration": "3 months"
+    },
+    {
+      "id": "proj-4",
+      "title": "Aegis JWT Gateway",
+      "description": "Blazing fast JWT authorization gateway serving as an authentication reverse proxy. Handles 150,000 requests per second with negligible CPU usage.",
+      "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=600&h=340",
+      "techStack": ["Rust", "Redis", "OAuth2", "Linux"],
+      "liveUrl": "https://github.com",
+      "githubUrl": "https://github.com",
+      "matchScore": 92,
+      "releaseYear": 2024,
+      "maturityRating": "R",
+      "duration": "4 months"
+    }
+  ],
+  "skills": [
+    {
+      "id": "skill-1",
+      "name": "React / Next.js / TypeScript",
+      "category": "Frontend Core",
+      "proficiency": 98,
+      "level": "Expert / Lead",
+      "description": "Architecting component libraries, custom hook paradigms, SSR/ISR optimization, and state managers."
+    },
+    {
+      "id": "skill-2",
+      "name": "Tailwind CSS & Framer Motion",
+      "category": "Design System",
+      "proficiency": 97,
+      "level": "Expert",
+      "description": "Creating fluid, responsive, micro-animated design tokens, and visually stunning layouts."
+    },
+    {
+      "id": "skill-3",
+      "name": "Node.js / Express / NestJS",
+      "category": "Backend Core",
+      "proficiency": 94,
+      "level": "Advanced",
+      "description": "Developing robust REST/GraphQL/gRPC microservices with complex middleware chains."
+    },
+    {
+      "id": "skill-4",
+      "name": "Docker & Kubernetes & AWS",
+      "category": "Cloud & DevOps",
+      "proficiency": 89,
+      "level": "Advanced",
+      "description": "Building scalable CI/CD pipelines, container clustering, service meshes, and cloud infrastructure."
+    },
+    {
+      "id": "skill-5",
+      "name": "SQL & PostgreSQL & Redis",
+      "category": "Database Core",
+      "proficiency": 92,
+      "level": "Advanced",
+      "description": "Optimizing search indexes, database locking protocols, caching mechanisms, and connection pools."
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp-1",
+      "role": "Principal Software Engineer",
+      "company": "Netflix Engineering Team",
+      "duration": "2024 - Present",
+      "description": "Leading the optimization of core user portal components to shave 120ms off of the Time-to-Interactive. Architected responsive horizontal layout carousels loaded by over 100M users.",
+      "techStack": ["Next.js", "GraphQL", "Node.js", "Redis", "Framer Motion"]
+    },
+    {
+      "id": "exp-2",
+      "role": "Senior Full-Stack Engineer",
+      "company": "TechStream Solutions",
+      "duration": "2021 - 2024",
+      "description": "Designed and shipped real-time collaboration canvas and video communication portals. Managed a high-performing dev team of 8 engineers working across React and Go microservices.",
+      "techStack": ["React", "Go", "WebRTC", "Docker", "PostgreSQL"]
+    },
+    {
+      "id": "exp-3",
+      "role": "Software Developer II",
+      "company": "Fintech Global Inc",
+      "duration": "2019 - 2021",
+      "description": "Implemented high-security ledger endpoints and transaction-tracking dashboards. Improved transaction database query response times by 35% using indexing strategy.",
+      "techStack": ["React", "TypeScript", "Node.js", "AWS", "PostgreSQL"]
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "test-1",
+      "name": "Sarah Connor",
+      "designation": "VP of Product",
+      "company": "NextGen Systems",
+      "text": "Jane is an exceptional engineer. She took ownership of our UI overhaul and completed it ahead of schedule. Performance increased by over 40% immediately upon release.",
+      "rating": 5
+    },
+    {
+      "id": "test-2",
+      "name": "Marcus Aurelius",
+      "designation": "Engineering Director",
+      "company": "Sovereign Cloud",
+      "text": "Her knowledge of React render lifecycles, combined with back-end database tuning, makes her a rare dual-threat engineer. A brilliant addition to any product development lifecycle.",
+      "rating": 5
+    },
+    {
+      "id": "test-3",
+      "name": "Selene Corvinus",
+      "designation": "Lead Architect",
+      "company": "CyberSecurity Labs",
+      "text": "She has high standards for code quality and UI aesthetics. The components she designs are incredibly reusable and extremely fast. We still use her structures as core templates.",
+      "rating": 5
+    }
+  ]
+}
