@@ -8,6 +8,7 @@ import HolographicAbout from "../components/portfolio/templates/Holographic/Abou
 import CulinaryAbout from "../components/portfolio/templates/Culinary_Restaurant/About";
 import TechStartupHero from "../components/portfolio/templates/Tech_Startup/Hero";
 import Navbar from '../components/Navbar'
+import GeometricShapesAbout from "../components/portfolio/templates/Geometric_Shapes/About";
 
 /* ─────────────────────────────────────────────────────────
    Custom FilterSelect
@@ -292,9 +293,8 @@ export default function TemplateGallery() {
   });
 
   return (
-    <div className="min-h-screen bg-background text-foreground p-8 pt-24 transition-colors duration-300">
+    <><div className="min-h-screen bg-background text-foreground p-8 pt-24 transition-colors duration-300">
       <Navbar />
-      
       <div className="flex justify-between items-center mb-8">
         <h1 className="text-4xl font-bold">Template Gallery</h1>
         {/* Theme Toggle */}
@@ -355,19 +355,18 @@ export default function TemplateGallery() {
               onUse={(title) => {
                 setSelectedPortfolioTitle(title);
                 setIsDeployModalOpen(true);
-              }} 
-            />
+              } } />
           ))}
         </div>
       )}
 
+
       <DeployModal
         isOpen={isDeployModalOpen}
         onClose={() => setIsDeployModalOpen(false)}
-        portfolioTitle={selectedPortfolioTitle} 
-      />
+        portfolioTitle={selectedPortfolioTitle} />
 
-      {/* Holographic Preview */}
+
       <div className="mt-12">
         <div className="mb-4 flex items-center gap-3 px-1">
           <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-cyan-400 border border-cyan-500/30">
@@ -380,7 +379,6 @@ export default function TemplateGallery() {
         </div>
       </div>
 
-      {/* Geometric Shapes Preview */}
       <div className="mt-12">
         <div className="mb-4 flex items-center gap-3 px-1">
           <span className="rounded-full bg-amber-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-amber-400 border border-amber-500/30">
@@ -389,13 +387,10 @@ export default function TemplateGallery() {
           <h2 className="text-lg font-semibold text-foreground/70">Geometric Shapes Theme — About Section</h2>
         </div>
         <div className="overflow-hidden rounded-2xl border border-border">
-          {/* Note: Ensure GeometricShapesAbout is imported at the top of the file */}
-          {typeof GeometricShapesAbout !== 'undefined' ? <GeometricShapesAbout /> : <div className="p-4 text-xs text-muted-foreground">Geometric component pending import...</div>}
+          <GeometricShapesAbout />
         </div>
       </div>
-
-      {/* Culinary Restaurant Preview */}
-      <div className="mt-12">
+    </div><div className="mt-12">
         <div className="mb-4 flex items-center gap-3 px-1">
           <span className="rounded-full bg-amber-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-amber-400 border border-amber-500/30">
             Preview
@@ -407,7 +402,6 @@ export default function TemplateGallery() {
         </div>
       </div>
 
-      {/* Tech Startup Preview */}
       <div className="mt-12">
         <div className="mb-4 flex items-center gap-3 px-1">
           <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-cyan-400 border border-cyan-500/30">
@@ -419,7 +413,7 @@ export default function TemplateGallery() {
           <TechStartupHero />
         </div>
       </div>
-
     </div>
   );
 }
+
